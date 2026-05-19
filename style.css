@@ -24,18 +24,22 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+
 .bg-glass {
-    background: var(--card-bg);
+    background: var(--card-bg) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color) !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
+    color: var(--text-color);
 }
 
 .bg-glass-modal {
-    background: var(--modal-bg);
-    border: 1px solid var(--border-color);
+    background: var(--modal-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color);
 }
+
 
 .logo-icon {
     width: 65px;
@@ -53,13 +57,17 @@ body {
 .header-title {
     background: var(--purple-gradient);
     -webkit-background-clip: text;
+    background-clip: text; 
     -webkit-text-fill-color: transparent;
 }
 
-.bg-purple-soft { background-color: rgba(139, 92, 246, 0.12); }
-.bg-info-soft { background-color: rgba(14, 165, 233, 0.12); }
-.bg-success-soft { background-color: rgba(34, 197, 94, 0.12); }
-.bg-danger-soft { background-color: rgba(239, 68, 68, 0.12); }
+
+.bg-purple-soft { background-color: rgba(139, 92, 246, 0.12) !important; }
+.bg-info-soft { background-color: rgba(14, 165, 233, 0.12) !important; }
+.bg-success-soft { background-color: rgba(34, 197, 94, 0.12) !important; }
+.bg-danger-soft { background-color: rgba(239, 68, 68, 0.12) !important; }
+
+.text-purple { color: var(--purple) !important; }
 
 .card-icon {
     width: 46px;
@@ -71,18 +79,23 @@ body {
     font-size: 1.3rem;
 }
 
+
 .task-card {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
     border-left: 6px solid var(--purple);
     border-radius: 18px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-color);
 }
+
 .task-card:hover {
     transform: translateY(-3px) scale(1.005);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05) !important;
 }
+
 
 .task-card.status-active { border-left-color: #0ea5e9; }
 .task-card.status-completed { border-left-color: #22c55e; opacity: 0.7; }
@@ -93,18 +106,23 @@ body {
     opacity: 0.5;
 }
 
-
-.prio-high { background-color: #EF4444; color: white; }
-.prio-medium { background-color: #F59E0B; color: white; }
-.prio-low { background-color: #10B981; color: white; }
+.prio-high { background-color: #EF4444 !important; color: white !important; }
+.prio-medium { background-color: #F59E0B !important; color: white !important; }
+.prio-low { background-color: #10B981 !important; color: white !important; }
 
 
 .btn-purple {
     background: var(--purple-gradient);
     border: none;
+    color: white !important;
     box-shadow: 0 4px 14px rgba(139, 92, 246, 0.25);
+    transition: all 0.2s ease;
 }
-.btn-purple:hover { opacity: 0.95; color: white; transform: translateY(-1px); }
+.btn-purple:hover { 
+    opacity: 0.95; 
+    transform: translateY(-1px); 
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
 
 .theme-switcher-container {
     position: fixed;
@@ -125,7 +143,9 @@ body {
 
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.task-card { animation: fadeIn 0.4s ease-out forwards; }
+.animate-fade-in { 
+    animation: fadeIn 0.4s ease-out forwards; 
+}
